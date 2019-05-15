@@ -1,6 +1,10 @@
 # IEEE Manuscript template with Travis CI testing
 
+[![Build Status](https://travis-ci.com/llpilla/ieee-manuscript-with-travis-ci.svg?branch=master)](https://travis-ci.com/llpilla/ieee-manuscript-with-travis-ci)
+
 This repository contains my personal example of an IEEE manuscript template with an integration with Travis CI to check that the PDF file is being generated without errors and the LaTeX files do not contain spelling errors.
+
+The whole idea of this repository template is motivated by previous experiences of working on papers whose authors (including myself) would push changes that would break the paper or that would add spelling errors.
 
 This repository builds over [Strauman's travis-latexbuild](https://github.com/Strauman/travis-latexbuild/). We use his Travis scripts and Docker image, and we add the scripts to run `aspell` over LaTeX files. The IEEE template was adapted from [here](https://www.ieee.org/conferences/publishing/templates.html) in May, 2019.
 

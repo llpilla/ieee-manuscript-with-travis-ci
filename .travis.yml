@@ -1,0 +1,20 @@
+sudo:       required
+language:   generic
+services:   docker
+addons:
+  apt:
+    packages:
+      - aspell
+      - aspell-en
+
+tex-config:
+- tex-scheme=full
+- push-type=none
+- build-pattern=./main.tex
+- latexmk-flags=-pdf
+- packages=
+
+script:
+- docker pull strauman/travis-latexbuild:full # select full texlive scheme
+- docker run --mount src=$TRAVIS_BUILD_DIR/,target=/repo,type=bind strauman/travis-latexbuild:full # also it here
+- ./travis-aspell.sh
